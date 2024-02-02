@@ -1,19 +1,14 @@
-all: debug
+all: main
 
-# <replace-me>
+# Compilation units
 
-<replace-me> := build/<replace-me>.o
-
-build/bmp.o: src/bmp/bmp.cpp
-	g++ -c $^ -o $@
+# triangle := build/main.o
 
 # Phonies
 
 .PHONY: all clean lib debug
 
-lib: build build/lib-<replace-me>.a
-
-debug: build build/debug
+main: build build/main
 
 build:
 	mkdir -p build
@@ -21,14 +16,9 @@ build:
 clean:
 	rm -rf build/
 
-# Linking
-
-build/lib_bmp.a: $(<replace-me>)
-	ar rcs $@ $^
-
 # Main / Entry point
 
-build/main: build/main.o $(<replace-me>)
+build/main: build/main.o
 	g++ $^ -o $@
 
 build/main.o: src/main.cpp
