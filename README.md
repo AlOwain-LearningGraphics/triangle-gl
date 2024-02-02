@@ -1,5 +1,3 @@
-# template-cpp
+# TriangleCpp
 
-This is a template repository to be used in my C++ projects.
-
-You are expected to modify it as needed, especially the Makefile and the .gitignore
+This repository is my first step (not really) into using OpenGL, by the end I wish to have a fully rendered triangle that is colored on a gradient.
